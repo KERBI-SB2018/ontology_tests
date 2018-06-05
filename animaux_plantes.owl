@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#"
+     xml:base="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange -->
+
+    <owl:ObjectProperty rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange">
+        <rdfs:domain rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mangePar -->
+
+    <owl:ObjectProperty rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mangePar">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#partieDe -->
+
+    <owl:ObjectProperty rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#partieDe">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Arbre"/>
+        <rdfs:domain rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Branche"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal">
+        <owl:disjointWith rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Arbre -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Arbre">
+        <rdfs:subClassOf rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Branche -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Branche">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#partieDe"/>
+                <owl:allValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Arbre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Carnivore -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Carnivore">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange"/>
+                        <owl:someValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Feuille -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Feuille">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#partieDe"/>
+                <owl:allValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Branche"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Girafe -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Girafe">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Herbivore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange"/>
+                        <owl:allValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Feuille"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Herbivore -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Herbivore">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#partieDe"/>
+                                        <owl:allValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Lion -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Lion">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Carnivore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mange"/>
+                        <owl:allValuesFrom rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Herbivore"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#PlanteSavouneuse -->
+
+    <owl:Class rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#PlanteSavouneuse">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Plante"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#mangePar"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Carnivore"/>
+                                    <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Herbivore"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Batavia -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Batavia">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Feuille"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#LaPalme -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#LaPalme">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Branche"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Leo -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Leo">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Lion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Olivier -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Olivier">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Arbre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Rose-Marie -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Rose-Marie">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#PlanteSavouneuse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Sophie -->
+
+    <owl:NamedIndividual rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Sophie">
+        <rdf:type rdf:resource="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Girafe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Batavia"/>
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#LaPalme"/>
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Leo"/>
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Olivier"/>
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Rose-Marie"/>
+            <rdf:Description rdf:about="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-51#Sophie"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
