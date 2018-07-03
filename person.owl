@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY www "https://www.pers.com#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-57 "https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-57#" >
+]>
+
+
+<rdf:RDF xmlns="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-57#"
+     xml:base="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-57"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-57="https://www.dropbox.com/s/2qmtq4qhej44y99/Ontology-Example-1.owl?dl=0/2018/5/untitled-ontology-57#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:www="https://www.pers.com#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://www.pers.com"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.pers.com#email -->
+
+    <owl:DatatypeProperty rdf:about="&www;email"/>
+    
+
+
+    <!-- https://www.pers.com#firstName -->
+
+    <owl:DatatypeProperty rdf:about="&www;firstName"/>
+    
+
+
+    <!-- https://www.pers.com#homeTel -->
+
+    <owl:DatatypeProperty rdf:about="&www;homeTel"/>
+    
+
+
+    <!-- https://www.pers.com#lastName -->
+
+    <owl:DatatypeProperty rdf:about="&www;lastName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.pers.com#Person -->
+
+    <owl:Class rdf:about="&www;Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&www;homeTel"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&www;lastName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&www;email"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&www;firstName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.pers.com#ali -->
+
+    <owl:NamedIndividual rdf:about="&www;ali">
+        <rdf:type rdf:resource="&www;Person"/>
+        <www:lastName rdf:datatype="&xsd;string">Ali</www:lastName>
+        <www:firstName rdf:datatype="&xsd;string">ali</www:firstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.pers.com#karim -->
+
+    <owl:NamedIndividual rdf:about="&www;karim">
+        <rdf:type rdf:resource="&www;Person"/>
+        <www:homeTel rdf:datatype="&xsd;string">3256897455</www:homeTel>
+        <www:lastName rdf:datatype="&xsd;string">Karim</www:lastName>
+        <www:firstName rdf:datatype="&xsd;string">karim</www:firstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.pers.com#samir -->
+
+    <owl:NamedIndividual rdf:about="&www;samir">
+        <rdf:type rdf:resource="&www;Person"/>
+        <www:homeTel rdf:datatype="&xsd;string">0124578955</www:homeTel>
+        <www:lastName rdf:datatype="&xsd;string">Sam</www:lastName>
+        <www:firstName rdf:datatype="&xsd;string">samir</www:firstName>
+        <www:email rdf:datatype="&xsd;string">samir2@gmail.com</www:email>
+        <www:email rdf:datatype="&xsd;string">samir@yahoo.fr</www:email>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&www;ali"/>
+            <rdf:Description rdf:about="&www;karim"/>
+            <rdf:Description rdf:about="&www;samir"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
